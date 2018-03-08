@@ -8,15 +8,27 @@ A starter pack to build JavaScript applications using standards from ES2015, ES2
 ## Usage
 
 ### Dependencies
-babel
-scss
-eslint
-webpack
-threejs
-glslify
-stats-js
-dat.gui
-query-string
+- babel
+- scss
+- eslint
+- webpack
+- threejs
+- glslify
+- stats-js
+- dat.gui
+- query-string
+
+### Folder Structure
+```bash
+src/app.js            // entry point
+src/app.scss            // temp global style sheet
+src/webgl/*           // all core threejs init files
+src/assets/*            // all kind of assets
+src/data/*            // keep data files
+src/lib/*           // 3rd party library
+src/objects/*           // threejs objects
+src/util/*            // custom util files
+```
 
 ### Installation
 
@@ -32,6 +44,11 @@ To serve in the browser  - Runs webpack-dev-server
 ```sh
 $ npm start
 ```
+```
+http://localhost:8080/
+http://localhost:8080/?stats
+http://localhost:8080/?stats&helpers
+```
 
 ### Build
 Compile and build
@@ -41,6 +58,9 @@ $ npm run build
 ```
 
 ## More Info
+
+### TODO
+- Assets handler
 
 ### Author
 

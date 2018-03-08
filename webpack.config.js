@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'app.bundle.js',
+    filename: 'app.bundle.js'
   },
   module: {
     loaders: [
@@ -35,6 +35,14 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
+        test: /\.(glsl|frag|vert)$/,
+        loader: 'raw-loader', exclude: /node_modules/
+      },
+      {
+        test: /\.(glsl|frag|vert)$/,
+        loader: 'glslify', exclude: /node_modules/
       }
     ]
   },

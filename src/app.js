@@ -1,8 +1,10 @@
 import { AxesHelper, GridHelper} from 'three';
 
-import scene from './core/webgl/scene';
-import renderer from './core/webgl/renderer';
-import { camera } from './core/webgl/cameras';
+import scene from './webgl/scene';
+import renderer from './webgl/renderer';
+import { camera } from './webgl/cameras';
+
+import Box from './objects/Box/Box';
 
 import OrbitControls from './lib/three/OrbitControls';
 import RenderStats from './lib/three/render-stats';
@@ -24,6 +26,9 @@ class App {
     this.setHelpers();
     this.setStats();
     this.setOrbitControls();
+
+    this.box = new Box();
+    scene.add(this.box.mesh);
 
     this.update();
   }
@@ -82,6 +87,8 @@ class App {
     }
 
     this.controls.main.update();
+
+    this.box.update();
 
     this.render(camera, 0, 0, 1, 1);
 
