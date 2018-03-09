@@ -1,5 +1,7 @@
 import { BoxGeometry, Mesh, ShaderMaterial } from 'three';
 
+// import imgSource from  '../../assets/images/file-name.ext';
+
 const simpleFrag = require('./shader.frag');
 const simpleVert = require('./shader.vert');
 
