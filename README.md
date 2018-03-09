@@ -30,6 +30,15 @@ src/objects/*           // threejs objects
 src/util/*            // custom util files
 ```
 
+### Production folder Structure
+```sh
+public/assets/*
+public/app.bundle.js
+public/commoms.js
+public/app.bundle.css
+public/index.html
+```
+
 ### Installation
 
 Install the dependencies
@@ -55,6 +64,26 @@ Compile and build
 
 ```sh
 $ npm run build
+```
+
+### GLOBAL VARIABLES
+
+Always make the root path to assets (image/videos..) a variable, store it in your global settings file, in both Javascript code and CSS
+
+Because when the site goes live, those assets will come from a CDN and going in and changing all the paths the day before the site goes live is very annoying.
+
+```scss
+$ASSET_PATH: './assets/';
+.background {
+    background: url('#{$ASSET_PATH}/images/background.png')
+}
+```
+
+```javascript
+import { ASSET_PATH, IMAGE_PATH } from '[path]/util/constants';
+
+const filePath1 = `${ASSET_PATH}images/[file-name].png`;
+const filePath2 = `${IMAGE_PATH}[file-name].png`;
 ```
 
 ## More Info

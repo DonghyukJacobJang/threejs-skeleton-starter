@@ -6,5 +6,5 @@ export const DEV_STATS = DEV && getQueryFromParams('stats') === null;
 export const DEV_HELPERS = DEV && getQueryFromParams('helpers') === null;
 
 export const BASE_URL = '/';
-export const ASSETS_DIR = `${BASE_URL}assets/`;
-export const WEBGL_DIR = `${ASSETS_DIR}webgl/`;
+export const ASSET_PATH = DEV ? './src/assets/' : './assets/';
+export const IMAGE_PATH = `${ASSET_PATH}images/`;
