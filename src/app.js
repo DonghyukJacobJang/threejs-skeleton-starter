@@ -11,6 +11,7 @@ import RenderStats from './lib/three/render-stats';
 
 import { DEV_HELPERS, DEV_STATS } from './util/constants';
 import stats from './util/stats';
+import { guiStats, guiHelpers } from './util/gui';
 
 import './app.scss';
 
