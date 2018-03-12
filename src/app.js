@@ -60,8 +60,8 @@ class App {
     if (DEV_STATS) {
       this.renderStats = RenderStats();
       this.renderStats.domElement.style.position = 'absolute';
-      this.renderStats.domElement.style.left = '0px';
-      this.renderStats.domElement.style.top = '48px';
+      this.renderStats.domElement.style.right = '0px';
+      this.renderStats.domElement.style.bottom = '48px';
       document.body.appendChild(this.renderStats.domElement);
       document.body.appendChild(stats.domElement);
     }
