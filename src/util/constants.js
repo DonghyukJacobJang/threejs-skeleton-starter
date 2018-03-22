@@ -1,7 +1,7 @@
 import { getQueryFromParams } from './params';
 
 const ENABLE_GUI = true;
-const ENABLE_STATS = true;
+const ENABLE_STATS = false;
 const ENABLE_HELPERS = true;
 
 export const DEV = process.env.DEV;

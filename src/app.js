@@ -11,7 +11,7 @@ import RenderStats from './lib/three/render-stats';
 
 import { DEV_HELPERS, DEV_STATS } from './util/constants';
 import stats from './util/stats';
-import { guiStats, guiHelpers } from './util/gui';
+import { guiHelpers } from './util/gui';
 
 import './app.scss';
 
@@ -52,8 +52,12 @@ class App {
 
   setHelpers = () => {
     if (DEV_HELPERS) {
-      scene.add(new GridHelper(10, 10));
-      scene.add(new AxesHelper());
+      const gridHelper = new GridHelper(10, 10);
+      const axesHelper = new AxesHelper();
+      scene.add(gridHelper);
+      scene.add(axesHelper);
+      guiHelpers.add(gridHelper, 'visible');
+      guiHelpers.add(axesHelper, 'visible');
     }
   };
 

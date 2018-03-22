@@ -61,7 +61,6 @@ if (!DEV_GUI) {
 }
 
 export const gui = new Cls();
-export const guiStats = gui.addFolder("stats");
 export const guiHelpers = gui.addFolder("helpers");
 
 export { GUIWrapper };
