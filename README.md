@@ -1,13 +1,8 @@
 # Threejs Skeleton Starter
 
-A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+This Threejs Skeleton Starter(TSS) allows to build Webgl applications in a minute. It is using standards from ES2015, ES2016 & ES2017 along with Webpack, webpack-dev-server, Babel packages(including in Babel polyfill and Async/Await).
 
-### Version
-1.1.0
-
-## Usage
-
-### Dependencies
+## Dependencies
 - babel
 - scss
 - eslint
@@ -17,6 +12,8 @@ A starter pack to build JavaScript applications using standards from ES2015, ES2
 - stats-js
 - dat.gui
 - query-string
+
+## Usage
 
 ### Folder Structure
 ```bash
@@ -34,6 +31,7 @@ src/util/*            // custom util files
 ```sh
 public/assets/*
 public/app.bundle.js
+public/app.bundle.js.gz
 public/commoms.js
 public/app.bundle.css
 public/index.html
@@ -89,7 +87,7 @@ const filePath2 = `${IMAGE_PATH}[file-name].png`;
 ## More Info
 
 ### TODO
-- Assets handler
+- Create Asset Manager
 
 ### Author
 

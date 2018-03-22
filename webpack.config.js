@@ -3,17 +3,35 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
 const extractCSS = new ExtractTextPlugin('[name].bundle.css');
 
 const plugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  }),
   new webpack.optimize.AggressiveMergingPlugin(),
   new webpack.optimize.UglifyJsPlugin({
     compress: { warnings: false },
     comments: false,
-    minimize: false
+    minimize: false,
+    exclude: [/\.min\.js$/gi]
+  }),
+  new CompressionPlugin({
+    asset: "[path].gz[query]",
+    algorithm: "gzip",
+    test: /\.js$|\.css$|\.html$/,
+    threshold: 10240,
+    minRatio: 0.8
+  }),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'commons',
+    filename: 'commons.js'
   }),
   new HtmlWebpackPlugin({
     title: 'WebGL Prototype',
@@ -25,10 +43,6 @@ const plugins = [
     'process.env': {
       DEV: !PRODUCTION
     }
-  }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'commons',
-    filename: 'commons.js'
   }),
   new CopyWebpackPlugin([
     { from: 'src/assets', to: 'assets' }
