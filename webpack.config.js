@@ -9,6 +9,12 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 const extractCSS = new ExtractTextPlugin('[name].bundle.css');
 
 const plugins = [
+  new webpack.optimize.AggressiveMergingPlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: { warnings: false },
+    comments: false,
+    minimize: false
+  }),
   new HtmlWebpackPlugin({
     title: 'WebGL Prototype',
     template: './index.html',
